@@ -54,7 +54,6 @@ export async function POST(req) {
   if (eventType==='user.created'){
     console.log('User created event')
   }
-
   if (eventType==='user.updated'){
     console.log('User updated event')
   }
