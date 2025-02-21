@@ -8,7 +8,7 @@ export async function POST(req) {
     throw new Error('Error: Please add SIGNING_SECRET from Clerk Dashboard to .env or .env.local')
   }
 
-  // Create new Svix instance with secret
+  // Create new Svix instance with secret.
   const wh = new Webhook(SIGNING_SECRET)
 
   // Get headers
@@ -54,11 +54,14 @@ export async function POST(req) {
   if (eventType==='user.created'){
     console.log('User created event')
   }
+
   if (eventType==='user.updated'){
     console.log('User updated event')
   }
+
   if (eventType==='user.deleted'){
     console.log('User deleted event')
   }
+
   return new Response('Webhook received', { status: 200 })
 }
